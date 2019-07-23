@@ -208,7 +208,7 @@ const preloadResources = opt => {
       uniqueResources.add(responseUrl);
     } else if (preconnectThirdParty) {
       const urlObj = url.parse(responseUrl);
-      const domain = `${urlObj.protocol}//${urlObj.host}`;
+      const domain = `https://${urlObj.host}`;
       if (uniqueResources.has(domain)) return;
       uniqueResources.add(domain);
       await page.evaluate(route => {
